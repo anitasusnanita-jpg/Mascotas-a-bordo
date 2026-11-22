@@ -301,6 +301,42 @@ h1 span {
     margin: 10px 16px 0;
 }
 
+/* ---------- MINI FORMULARIOS ---------- */
+.mini-form {
+    display: grid;
+    gap: 16px;
+    max-width: 480px;
+    margin: 24px auto;
+}
+
+.mini-form label {
+    display: grid;
+    gap: 6px;
+    font-weight: bold;
+    color: #51463d;
+}
+
+.mini-form input,
+.mini-form select,
+.mini-form textarea {
+    padding: 10px 12px;
+    border: 2px solid #e0cfa8;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #fffaf0;
+    color: #332b2e;
+}
+
+.mini-form textarea {
+    resize: vertical;
+}
+
+.mini-form .boton-enlace {
+    justify-self: start;
+    margin: 0;
+}
+
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 760px) {
     body {
@@ -360,30 +396,4 @@ h1 span {
     .botones {
         grid-template-columns: 1fr;
     }
-}
-.mini-form {
-    display: grid;
-    gap: 16px;
-    max-width: 480px;
-    margin: 24px auto;
-}
-.mini-form label {
-    display: grid;
-    gap: 6px;
-    font-weight: bold;
-    color: #51463d;
-}
-.mini-form input,
-.mini-form select {
-    padding: 10px 12px;
-    border: 2px solid #e0cfa8;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-family: inherit;
-    background: #fffaf0;
-    color: #332b2e;
-}
-.mini-form .boton-enlace {
-    justify-self: start;
-    margin: 0;
 }

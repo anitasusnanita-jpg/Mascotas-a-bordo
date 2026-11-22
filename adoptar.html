@@ -10,33 +10,17 @@
     <main class="pagina">
         <a class="volver" href="categorias.html">← Volver a categorías</a>
         <h1 class="titulo-pagina"><span>Adoptar</span></h1>
-        <p class="texto-intro">Llena tus datos para solicitar la adopción. El nombre del animal se llena automáticamente.</p>
+        <p class="texto-intro centrado">¡Estás a un paso de cambiar una vida (y la tuya también)! 🐾 Llena el formulario y encuentra a tu nuevo mejor amigo.</p>
 
-        <form class="mini-form" action="#" method="get">
-            <label>Animal que quieres adoptar:
-                <input type="text" name="animal" id="animal" readonly>
-            </label>
-            <label>Tu nombre:
-                <input type="text" name="nombre" required>
-            </label>
-            <label>Tu correo:
-                <input type="email" name="correo" required>
-            </label>
-            <label>¿Tienes experiencia con mascotas?
-                <select name="experiencia">
-                    <option>Sí</option>
-                    <option>No</option>
-                </select>
-            </label>
-            <button class="boton-enlace" type="submit">Enviar solicitud</button>
-        </form>
+        <div class="tarjeta-formulario centrado">
+            <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=800&q=85" alt="Adopción" loading="lazy">
+            <div class="contenido-formulario">
+                <h2>Formulario de adopción</h2>
+                <p>Cuéntanos un poquito sobre ti y tu hogar. Queremos asegurarnos de que tu nueva mascota será la más feliz del mundo. ✨</p>
+                <!-- PEGA AQUÍ EL LINK DE TU FORMULARIO 1 DE JOTFORM -->
+                <a class="boton-enlace" href="https://form.jotform.com/263247286756065" target="_blank">¡Quiero adoptar! 🐶</a>
+            </div>
+        </div>
     </main>
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const animal = params.get("animal");
-        if (animal) {
-            document.getElementById("animal").value = animal;
-        }
-    </script>
 </body>
 </html>

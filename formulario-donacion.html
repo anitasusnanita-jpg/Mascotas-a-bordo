@@ -12,7 +12,7 @@
         <h1 class="titulo-pagina"><span>Formulario</span><br>de donación</h1>
         <p class="texto-intro">Gracias por querer apoyar. Llena tus datos y el equipo se pondrá en contacto contigo.</p>
 
-        <form class="mini-form" action="#" method="get">
+        <form class="mini-form" action="https://formsubmit.co/anitasusnanita@gmail.com" method="POST">
             <label>Tu nombre:
                 <input type="text" name="nombre" required>
             </label>
@@ -20,16 +20,25 @@
                 <input type="email" name="correo" required>
             </label>
             <label>Tipo de donación:
-                <select name="tipo">
-                    <option>Económica</option>
-                    <option>En especie</option>
+                <select name="tipo" id="tipo">
+                    <option value="economica">Donación económica</option>
+                    <option value="materiales">Donación de materiales</option>
                 </select>
             </label>
             <label>Monto o detalle:
                 <input type="text" name="detalle">
             </label>
+            <input type="hidden" name="_subject" value="Nueva donación">
+            <input type="hidden" name="_captcha" value="false">
             <button class="boton-enlace" type="submit">Enviar</button>
         </form>
     </main>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const tipo = params.get("tipo");
+        if (tipo) {
+            document.getElementById("tipo").value = tipo;
+        }
+    </script>
 </body>
 </html>

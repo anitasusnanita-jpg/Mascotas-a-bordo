@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedir ayuda | Mascota a Bordo</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <main class="pagina">
+        <a class="volver" href="extravios.html">← Volver a extravíos</a>
+        <h1 class="titulo-pagina"><span>Pedir</span><br>ayuda</h1>
+        <p class="texto-intro">Si encontraste un animal o viste uno extraviado, por favor llena los datos de su placa para ayudarnos a localizar a su familia.</p>
+
+        <form class="mini-form" action="https://formsubmit.co/anitasusnanita@gmail.com" method="POST">
+            <label>¿Dónde viste al animal? (Zona o colonia):
+                <input type="text" name="zona" required>
+            </label>
+            
+            <label>¿Tenía placa?
+                <select name="tiene_placa" required>
+                    <option value="si">Sí, tenía placa</option>
+                    <option value="no">No tenía placa</option>
+                </select>
+            </label>
+
+            <label>Número de la placa (si la tiene):
+                <input type="text" name="numero_placa" placeholder="Ej. 12345">
+            </label>
+
+            <label>Datos extra o descripción:
+                <textarea name="descripcion" rows="3" placeholder="Color, raza, si está asustado..."></textarea>
+            </label>
+
+            <input type="hidden" name="_subject" value="Aviso de animal extraviado / Pedir ayuda">
+            <input type="hidden" name="_captcha" value="false">
+            
+            <button class="boton-enlace" type="submit">Enviar aviso</button>
+        </form>
+    </main>
+</body>
+</html>

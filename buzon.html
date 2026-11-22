@@ -12,11 +12,6 @@
         <h1 class="titulo-pagina"><span>Buzón</span><br>de preguntas</h1>
         <p class="texto-intro">Envíanos tus dudas sobre adopción, cuidados o el funcionamiento del sitio. Te responderemos lo antes posible.</p>
 
-        <div class="acciones-inicio">
-            <a class="boton-enlace" href="formularios.html">Escribir mi pregunta</a>
-            <a class="boton-enlace" href="donaciones.html">Quiero apoyar</a>
-        </div>
-
         <section class="extra">
             <h2 class="centrado">Preguntas frecuentes</h2>
             <div class="tarjetas">
@@ -24,16 +19,30 @@
                     <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=85" alt="Proceso de adopción" loading="lazy">
                     <h2>¿Cómo adopto?</h2>
                     <p>Revisa el catálogo, elige un animal y llena el formulario de adopción.</p>
+                    
                     <button class="boton-enlace" onclick="document.getElementById('resp1').hidden = !document.getElementById('resp1').hidden">Ver respuesta</button>
-                    <p id="resp1" hidden>Entra al catálogo, elige tu categoría favorita y después llena el formulario de adopción.</p>
+                    
+                    <!-- Botón movido adentro de la respuesta -->
+                    <div id="resp1" hidden>
+                        <p style="padding: 0 16px;">Entra al catálogo, elige tu categoría favorita y después llena el formulario de adopción.</p>
+                        <a class="boton-enlace" href="categorias.html">Ver catálogo</a>
+                    </div>
                 </article>
+                
                 <article class="tarjeta">
                     <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=600&q=85" alt="Cuidados" loading="lazy">
                     <h2>¿Qué necesita mi mascota?</h2>
                     <p>Cada animal tiene cuidados distintos. Consulta su ficha y pregunta al equipo.</p>
+                    
                     <button class="boton-enlace" onclick="document.getElementById('resp2').hidden = !document.getElementById('resp2').hidden">Ver respuesta</button>
-                    <p id="resp2" hidden>Revisa la ficha del animal y escríbenos si tienes dudas sobre alimentación o espacio.</p>
+                    
+                    <!-- Botón movido adentro de la respuesta -->
+                    <div id="resp2" hidden>
+                        <p style="padding: 0 16px;">Revisa la ficha del animal y escríbenos si tienes dudas sobre alimentación o espacio.</p>
+                        <a class="boton-enlace" href="ficha.html">Ver ficha de ejemplo</a>
+                    </div>
                 </article>
+                
                 <article class="tarjeta">
                     <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=600&q=85" alt="Donaciones" loading="lazy">
                     <h2>¿Cómo apoyo?</h2>
@@ -42,6 +51,10 @@
                 </article>
             </div>
         </section>
+
+        <div class="acciones-inicio">
+            <a class="boton-enlace" href="buzon-enviar.html">Escribir mi pregunta</a>
+        </div>
     </main>
 </body>
 </html>
