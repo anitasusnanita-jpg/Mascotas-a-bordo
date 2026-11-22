@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoptar | Mascota a Bordo</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <main class="pagina">
+        <a class="volver" href="categorias.html">← Volver a categorías</a>
+        <h1 class="titulo-pagina"><span>Adoptar</span></h1>
+        <p class="texto-intro">Llena tus datos para solicitar la adopción. El nombre del animal se llena automáticamente.</p>
+
+        <form class="mini-form" action="#" method="get">
+            <label>Animal que quieres adoptar:
+                <input type="text" name="animal" id="animal" readonly>
+            </label>
+            <label>Tu nombre:
+                <input type="text" name="nombre" required>
+            </label>
+            <label>Tu correo:
+                <input type="email" name="correo" required>
+            </label>
+            <label>¿Tienes experiencia con mascotas?
+                <select name="experiencia">
+                    <option>Sí</option>
+                    <option>No</option>
+                </select>
+            </label>
+            <button class="boton-enlace" type="submit">Enviar solicitud</button>
+        </form>
+    </main>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const animal = params.get("animal");
+        if (animal) {
+            document.getElementById("animal").value = animal;
+        }
+    </script>
+</body>
+</html>

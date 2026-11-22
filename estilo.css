@@ -10,6 +10,7 @@ body {
     color: #332b2e;
 }
 
+/* ---------- PORTADA (index) ---------- */
 .inicio {
     max-width: 1200px;
     min-height: 650px;
@@ -136,14 +137,171 @@ h1 span {
     object-fit: cover;
 }
 
-.animales-superiores img {
-    object-position: center;
+/* ---------- PÁGINAS INTERNAS ---------- */
+.pagina {
+    max-width: 1200px;
+    min-height: 85vh;
+    margin: auto;
+    padding: 36px;
+    background: #f7eddb;
+    border-radius: 8px;
 }
 
-.animales-inferiores img {
-    object-position: center;
+.volver {
+    display: inline-block;
+    color: #557d35;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 24px;
 }
 
+.titulo-pagina {
+    color: #332b2e;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: .95;
+    margin: 0 0 30px;
+    letter-spacing: -2px;
+}
+
+.titulo-pagina span {
+    color: #557d35;
+}
+
+/* ---------- CATEGORÍAS ---------- */
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    gap: 18px;
+    max-width: 800px;
+    margin: 24px auto 30px;
+}
+
+.categorias a,
+.categorias div {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #f2b632;
+    border-radius: 18px;
+    color: #557d35;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px;
+    transition: transform .2s, background .2s;
+}
+
+.categorias a:hover {
+    background: #e9a91f;
+    transform: translateY(-3px);
+}
+
+/* ---------- TARJETAS ---------- */
+.seccion-animales h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 25px 0 45px;
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.tarjeta {
+    background: #fff8ec;
+    border-radius: 18px;
+    overflow: hidden;
+    padding-bottom: 16px;
+}
+
+.tarjeta img {
+    display: block;
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border: 0;
+    border-radius: 0;
+}
+
+.tarjeta h2,
+.tarjeta p {
+    padding: 0 16px;
+}
+
+.tarjeta h2 {
+    color: #332b2e;
+    margin: 12px 0 6px;
+    font-size: 1.35rem;
+}
+
+.tarjeta p {
+    font-size: .9rem;
+    line-height: 1.5;
+}
+
+.tarjeta b {
+    color: #557d35;
+}
+
+/* ---------- EXTRAS ---------- */
+.extra {
+    margin-top: 60px;
+}
+
+.texto-intro {
+    color: #51463d;
+    font-size: 1.05rem;
+    margin: 0 0 24px;
+}
+
+.centrado {
+    text-align: center;
+}
+
+.catalogo-inicio .categorias {
+    margin-top: 28px;
+}
+
+/* ---------- BOTONES DE ACCIÓN ---------- */
+.acciones-inicio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0 10px;
+}
+
+.acciones-inicio .boton-enlace {
+    margin: 0;
+}
+
+.boton-enlace {
+    display: inline-block;
+    margin: 8px 16px 0;
+    padding: 10px 18px;
+    background: #f2b632;
+    color: #44352a;
+    border: none;
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: .95rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform .2s, background .2s;
+}
+
+.boton-enlace:hover {
+    background: #e9a91f;
+    transform: translateY(-2px);
+}
+
+.tarjeta .boton-enlace {
+    margin: 10px 16px 0;
+}
+
+/* ---------- RESPONSIVE ---------- */
 @media (max-width: 760px) {
     body {
         padding: 12px;
@@ -179,89 +337,53 @@ h1 span {
     }
 }
 
+@media (max-width: 650px) {
+    .pagina {
+        padding: 22px;
+    }
+
+    .categorias {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta img {
+        height: 230px;
+    }
+}
+
 @media (max-width: 390px) {
     .botones {
         grid-template-columns: 1fr;
     }
 }
-.pagina {
-    max-width: 1200px;
-    min-height: 85vh;
-    margin: auto;
-    padding: 36px;
-    background: #f7eddb;
-    border-radius: 8px;
+.mini-form {
+    display: grid;
+    gap: 16px;
+    max-width: 480px;
+    margin: 24px auto;
 }
-.volver {
-    display: inline-block;
-    color: #557d35;
+.mini-form label {
+    display: grid;
+    gap: 6px;
     font-weight: bold;
-    text-decoration: none;
-    margin-bottom: 24px;
+    color: #51463d;
 }
-.titulo-pagina {
+.mini-form input,
+.mini-form select {
+    padding: 10px 12px;
+    border: 2px solid #e0cfa8;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #fffaf0;
     color: #332b2e;
-    font-size: clamp(3rem, 7vw, 5.5rem);
-    line-height: .95;
-    margin: 0 0 30px;
-    letter-spacing: -2px;
 }
-.titulo-pagina span {
-    color: #557d35;
-}
-.categorias {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(100px, 1fr));
-    gap: 18px;
-    max-width: 800px;
-    margin: 24px auto 50px;
-}
-.categorias a, .categorias div {
-    min-height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: #f2b632;
-    border-radius: 18px;
-    color: #557d35;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 12px;
-}
-.categorias a:hover {
-    background: #e9a91f;
-}
-.seccion-animales h2 {
-    text-align: center;
-    font-size: 3rem;
-    margin: 25px 0 45px;
-}
-.tarjetas {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 30px;
-}
-.tarjeta img {
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
-    border: 12px solid #f2b632;
-    border-radius: 25px;
-}
-.tarjeta p {
-    font-size: .9rem;
-    line-height: 1.5;
-}
-.tarjeta b {
-    color: #557d35;
-}
-.extra {
-    margin-top: 60px;
-}
-@media (max-width: 650px) {
-    .pagina { padding: 22px; }
-    .categorias { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-    .tarjetas { grid-template-columns: 1fr; }
-    .tarjeta img { height: 230px; }
+.mini-form .boton-enlace {
+    justify-self: start;
+    margin: 0;
 }
