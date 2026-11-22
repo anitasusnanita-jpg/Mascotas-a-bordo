@@ -5,6 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donaciones | Mascota a Bordo</title>
     <link rel="stylesheet" href="estilo.css">
+    <style>
+        .tarjeta-agradecimiento {
+            background: #fff8ec;
+            border-radius: 30px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-top: 8px solid #f2b632;
+        }
+        .tarjeta-agradecimiento h2 {
+            color: #557d35;
+            font-size: 2.2rem;
+            margin-top: 0;
+        }
+        .tarjeta-agradecimiento p {
+            font-size: 1.1rem;
+            color: #51463d;
+            line-height: 1.6;
+        }
+        .contenedor-jotform {
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border: 4px solid #ead0a5;
+        }
+    </style>
 </head>
 <body>
     <main class="pagina">
@@ -12,9 +38,12 @@
         
         <h1 class="titulo-pagina centrado"><span>Sección</span><br>de donación</h1>
         
-        <p class="texto-intro centrado" style="max-width: 800px; margin: 0 auto 30px auto;">
-            ¡Gracias por tener un corazón tan grande! 🐾 Tu donación, por pequeña que sea, nos ayuda a llenar pancitas, pagar medicinas y darles un espacio seguro a los peluditos mientras encuentran su hogar definitivo. ❤️
-        </p>
+        <div class="tarjeta-agradecimiento">
+            <h2>¡Tu ayuda hace la diferencia! 🐾</h2>
+            <p>Gracias por tener un corazón tan grande. Tu donación nos ayuda a llenar pancitas, pagar medicinas y darles un espacio seguro a los peluditos mientras encuentran su hogar definitivo. ❤️</p>
+        </div>
+
+        <h3 class="centrado" style="color: #332b2e; margin-bottom: 20px;">Llena el formulario para registrar tu apoyo</h3>
 
         <!-- Formulario de JotForm incrustado -->
         <div class="contenedor-jotform">
@@ -26,10 +55,6 @@
                 style="border-radius: 15px; min-height: 700px;">
                 Cargando…
             </iframe>
-        </div>
-
-        <div class="acciones-inicio" style="margin-top: 40px;">
-            <a class="boton-enlace" href="buzon.html">Tengo dudas</a>
         </div>
     </main>
 </body>

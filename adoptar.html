@@ -5,14 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adoptar | Mascota a Bordo</title>
     <link rel="stylesheet" href="estilo.css">
+    <style>
+        /* --- DISEÑO DEL BANNER CON FONDO BEIGE Y DETALLES NARANJAS --- */
+        .banner-adopcion {
+            position: relative;
+            border-radius: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            background: #fff8ec; /* Fondo beige claro */
+            padding: 60px 20px;
+            border: 3px dashed #f2b632; /* Borde punteado naranja */
+            overflow: hidden;
+        }
+
+        /* Círculos decorativos de fondo (naranjitas) */
+        .banner-adopcion::before,
+        .banner-adopcion::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: #f2b632;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .banner-adopcion::before {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+        }
+
+        .banner-adopcion::after {
+            width: 200px;
+            height: 200px;
+            bottom: -50px;
+            right: -50px;
+        }
+
+        /* Tarjeta con el texto encima del fondo */
+        .texto-banner {
+            position: relative;
+            z-index: 2;
+            background: #ffffff;
+            padding: 30px 50px;
+            border-radius: 20px;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-left: 8px solid #f2b632; /* Detalle naranja a la izquierda */
+            transition: transform 0.3s ease;
+        }
+
+        .texto-banner:hover {
+            transform: translateY(-5px);
+        }
+
+        .banner-adopcion h2 {
+            margin: 0;
+            color: #332b2e; /* Color oscuro para el título */
+            font-size: 2.2rem;
+            font-weight: 900;
+        }
+        
+        .banner-adopcion p {
+            margin: 10px 0 0 0;
+            color: #557d35; /* Verde de la marca para el subtítulo */
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        /* Estilo del formulario */
+        .contenedor-jotform {
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            border: 4px solid #f2b632; /* Borde naranja en el formulario */
+            background: #fff8ec;
+            padding: 20px;
+        }
+
+        @media (max-width: 760px) {
+            .texto-banner {
+                padding: 20px;
+            }
+            .banner-adopcion h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <main class="pagina">
         <a class="volver" href="categorias.html">← Volver a categorías</a>
         <h1 class="titulo-pagina centrado"><span>Adoptar</span></h1>
-        <p class="texto-intro centrado">¡Estás a un paso de cambiar una vida (y la tuya también)! 🐾 Cuéntanos un poquito sobre ti y tu hogar. Queremos asegurarnos de que tu nueva mascota será la más feliz del mundo. ✨</p>
+        
+        <!-- Banner con fondo beige y detalles naranjas -->
+        <div class="banner-adopcion">
+            <div class="texto-banner">
+                <h2>¡Estás a un paso de cambiar una vida! 🐾</h2>
+                <p>Cuéntanos sobre ti en el siguiente formulario.</p>
+            </div>
+        </div>
 
-        <!-- Formulario incrustado con iframe -->
+        <p class="texto-intro centrado" style="max-width: 800px; margin: 0 auto 30px auto;">Queremos asegurarnos de que tu nueva mascota será la más feliz del mundo. ✨</p>
+
+        <!-- Formulario de JotForm incrustado -->
         <div class="contenedor-jotform">
             <iframe 
                 src="https://form.jotform.com/263247286756065" 

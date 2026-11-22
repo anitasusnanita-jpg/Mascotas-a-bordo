@@ -5,33 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reporte de extravíos | Mascota a Bordo</title>
     <link rel="stylesheet" href="estilo.css">
+    <style>
+        /* --- DISEÑO DEL BANNER SUPERIOR --- */
+        .banner-extravios {
+            background: #fff8ec;
+            border-radius: 25px;
+            padding: 40px 30px;
+            text-align: center;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-left: 10px solid #f2b632;
+            border-right: 10px solid #f2b632;
+        }
+
+        .banner-extravios h2 {
+            color: #332b2e;
+            font-size: 2.2rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 900;
+        }
+
+        .banner-extravios p {
+            font-size: 1.15rem;
+            color: #51463d;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* --- DISEÑO DE LAS TARJETAS ACOSTADAS --- */
+        .contenedor-tarjetas {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tarjeta-acostada {
+            display: flex;
+            flex-direction: row; /* Imagen a la izquierda, texto a la derecha */
+            align-items: center;
+            background: #ffffff;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-left: 8px solid #557d35; /* Borde verde de marca */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tarjeta-acostada:hover {
+            transform: translateX(10px); /* Efecto de deslizar hacia la derecha */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        /* Lado de la imagen */
+        .tarjeta-imagen {
+            width: 35%;
+            background: #f7eddb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        .tarjeta-imagen img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            z-index: 1;
+        }
+
+        /* Número gigante de fondo en la imagen */
+        .tarjeta-numero {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 8rem;
+            font-weight: 900;
+            color: #ead0a5;
+            opacity: 0.5;
+            z-index: 0;
+            margin: 0;
+        }
+
+        /* Lado del texto */
+        .tarjeta-contenido {
+            width: 65%;
+            padding: 30px 40px;
+        }
+
+        .tarjeta-contenido h2 {
+            color: #332b2e;
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .tarjeta-contenido p {
+            color: #51463d;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn-naranja {
+            background: #f2b632 !important;
+            color: #332b2e !important;
+        }
+
+        /* --- RESPONSIVE PARA CELULARES --- */
+        @media (max-width: 760px) {
+            .tarjeta-acostada {
+                flex-direction: column; /* En celular se vuelve vertical */
+                border-left: none;
+                border-top: 8px solid #557d35;
+            }
+            .tarjeta-imagen {
+                width: 100%;
+                padding: 20px;
+            }
+            .tarjeta-contenido {
+                width: 100%;
+                padding: 20px;
+                text-align: center;
+            }
+            .tarjeta-acostada:hover {
+                transform: translateY(-5px); /* En celular el efecto es hacia arriba */
+            }
+        }
+    </style>
 </head>
 <body>
     <main class="pagina">
         <a class="volver" href="index.html">← Volver al inicio</a>
-        <h1 class="titulo-pagina"><span>Reporte</span><br>de extravíos</h1>
-        <p class="texto-intro">Reporta aquí los datos de tu mascota perdida o encontrada.</p>
+        <h1 class="titulo-pagina centrado"><span>Reporte</span><br>de extravíos</h1>
 
-        <section class="extra">
-            <!-- Nuevo título -->
-            <h2 class="centrado">¿Encontraste o perdiste a tu peludito?</h2>
-            
-            <div class="tarjetas">
-                <!-- Tarjeta 1: Encontré -->
-                <article class="tarjeta">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3031/3031120.png" alt="Encontré" loading="lazy" style="object-fit: contain; padding: 40px; background: #f7eddb;">
-                    <h2>1. Encontré</h2>
-                    <p>¿Viste un peludito en la calle? Revisa si trae placa y ayúdanos a avisar a su familia.</p>
-                    <a class="boton-enlace" href="pedir-ayuda.html">Pedir ayuda</a>
+        <!-- Banner de bienvenida -->
+        <div class="banner-extravios">
+            <h2>¿Encontraste o perdiste a tu peludito? 💔</h2>
+            <p>Sabemos lo difícil que es este momento. Estamos aquí para ayudarte a difundir la información y reunir a las familias lo más rápido posible.</p>
+        </div>
+
+        <section class="extra" style="margin-top: 0;">
+            <div class="contenedor-tarjetas">
+                
+                <!-- Tarjeta 1: Encontré (Rectángulo Acostado) -->
+                <article class="tarjeta-acostada">
+                    <div class="tarjeta-imagen">
+                        <h2 class="tarjeta-numero">1</h2>
+                        <img src="https://cdn-icons-png.flaticon.com/512/3031/3031120.png" alt="Encontré">
+                    </div>
+                    <div class="tarjeta-contenido">
+                        <h2>Encontré un peludito</h2>
+                        <p>¿Viste un animal en la calle? Revisa si trae placa y ayúdanos a avisar a su familia.</p>
+                        <a class="boton-enlace" href="pedir-ayuda.html">Pedir ayuda 🐾</a>
+                    </div>
                 </article>
                 
-                <!-- Tarjeta 2: Reporta -->
-                <article class="tarjeta">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2921/2921226.png" alt="Reporta" loading="lazy" style="object-fit: contain; padding: 40px; background: #f7eddb;">
-                    <h2>2. Reporta</h2>
-                    <p>¿Perdiste a tu mascota? Llena el reporte con foto, nombre, zona y fecha del extravío.</p>
-                    <a class="boton-enlace" href="reporte-extravio.html">Llenar reporte</a>
+                <!-- Tarjeta 2: Reporta (Rectángulo Acostado) -->
+                <article class="tarjeta-acostada">
+                    <div class="tarjeta-imagen">
+                        <h2 class="tarjeta-numero">2</h2>
+                        <img src="https://cdn-icons-png.flaticon.com/512/2921/2921226.png" alt="Reporta">
+                    </div>
+                    <div class="tarjeta-contenido">
+                        <h2>Perdí a mi mascota</h2>
+                        <p>¿Perdiste a tu mascota? Llena el reporte con foto, nombre, zona y fecha del extravío para difundirlo.</p>
+                        <a class="boton-enlace btn-naranja" href="reporte-extravio.html">Llenar reporte 📝</a>
+                    </div>
                 </article>
+
             </div>
         </section>
     </main>

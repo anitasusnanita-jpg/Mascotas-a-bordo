@@ -5,22 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escribir pregunta | Mascota a Bordo</title>
     <link rel="stylesheet" href="estilo.css">
+    <style>
+        .contenedor-jotform {
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border: 4px solid #ead0a5;
+            background: #fff8ec;
+            padding: 30px;
+        }
+    </style>
 </head>
 <body>
     <main class="pagina">
         <a class="volver" href="buzon.html">← Volver al buzón</a>
-        <h1 class="titulo-pagina"><span>Escribe</span><br>tu pregunta</h1>
-        <p class="texto-intro centrado">¿Tienes dudas? ¡No te preocupes! Estamos aquí para ayudarte con una sonrisa. 😊</p>
+        <h1 class="titulo-pagina centrado"><span>Escribe</span><br>tu pregunta</h1>
+        <p class="texto-intro centrado">Déjanos tu duda y te responderemos lo antes posible.</p>
 
-        <div class="contenedor-formulario">
-            <h2>Buzón de preguntas</h2>
-            <p>Escríbenos cualquier duda sobre adopción, cuidados o el sitio. ¡Nos encantará leerte y responderte rapidito! 💌</p>
-            
-            <!-- FORMULARIO JOTFORM -->
-            <iframe
-                src="https://form.jotform.com/263247355438059"
-                title="Buzón de preguntas"
-                style="width: 100%; min-height: 600px; border: none; border-radius: 15px; background: #fff; margin-top: 15px;">
+        <div class="contenedor-jotform">
+            <iframe 
+                src="https://form.jotform.com/263247355438059" 
+                width="100%" 
+                height="700" 
+                frameborder="0" 
+                style="border-radius: 15px; min-height: 700px;">
                 Cargando…
             </iframe>
         </div>
