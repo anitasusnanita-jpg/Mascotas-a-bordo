@@ -3,42 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de donación | Mascota a Bordo</title>
+    <title>Donaciones | Mascota a Bordo</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <main class="pagina">
-        <a class="volver" href="donaciones.html">← Volver a donaciones</a>
-        <h1 class="titulo-pagina"><span>Formulario</span><br>de donación</h1>
-        <p class="texto-intro">Gracias por querer apoyar. Llena tus datos y el equipo se pondrá en contacto contigo.</p>
+        <a class="volver" href="index.html">← Volver al inicio</a>
+        
+        <h1 class="titulo-pagina centrado"><span>Sección</span><br>de donación</h1>
+        
+        <p class="texto-intro centrado" style="max-width: 800px; margin: 0 auto 30px auto;">
+            ¡Gracias por tener un corazón tan grande! 🐾 Tu donación, por pequeña que sea, nos ayuda a llenar pancitas, pagar medicinas y darles un espacio seguro a los peluditos mientras encuentran su hogar definitivo. ❤️
+        </p>
 
-        <form class="mini-form" action="https://formsubmit.co/anitasusnanita@gmail.com" method="POST">
-            <label>Tu nombre:
-                <input type="text" name="nombre" required>
-            </label>
-            <label>Tu correo:
-                <input type="email" name="correo" required>
-            </label>
-            <label>Tipo de donación:
-                <select name="tipo" id="tipo">
-                    <option value="economica">Donación económica</option>
-                    <option value="materiales">Donación de materiales</option>
-                </select>
-            </label>
-            <label>Monto o detalle:
-                <input type="text" name="detalle">
-            </label>
-            <input type="hidden" name="_subject" value="Nueva donación">
-            <input type="hidden" name="_captcha" value="false">
-            <button class="boton-enlace" type="submit">Enviar</button>
-        </form>
+        <!-- Formulario de JotForm incrustado -->
+        <div class="contenedor-jotform">
+            <iframe 
+                src="https://form.jotform.com/263247345006049" 
+                width="100%" 
+                height="700" 
+                frameborder="0" 
+                style="border-radius: 15px; min-height: 700px;">
+                Cargando…
+            </iframe>
+        </div>
+
+        <div class="acciones-inicio" style="margin-top: 40px;">
+            <a class="boton-enlace" href="buzon.html">Tengo dudas</a>
+        </div>
     </main>
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const tipo = params.get("tipo");
-        if (tipo) {
-            document.getElementById("tipo").value = tipo;
-        }
-    </script>
 </body>
 </html>

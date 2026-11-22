@@ -5,22 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categorías | Mascota a Bordo</title>
     <link rel="stylesheet" href="estilo.css">
+    <style>
+        /* Estilos exclusivos para las nuevas tarjetas de categorías */
+        .categorias-decoradas {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .categoria-card {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .categoria-card:hover {
+            transform: translateY(-10px) scale(1.05); /* Efecto de saltito */
+        }
+
+        /* Estilo para la imagen/ilustración */
+        .categoria-card img {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 50%; /* Las hace redondas */
+            border: 6px solid #f2b632; /* Borde amarillo de la marca */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            background-color: #f7eddb; /* Por si la imagen tiene transparencia */
+            transition: box-shadow 0.3s ease;
+        }
+
+        .categoria-card:hover img {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+            border-color: #e9a91f; /* El borde se hace más oscuro al pasar el mouse */
+        }
+
+        /* Estilo para el texto debajo de la imagen */
+        .categoria-titulo {
+            margin-top: 20px;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #557d35; /* Verde de tu página */
+            letter-spacing: 1px;
+            background: #fff8ec;
+            padding: 8px 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .categoria-card:hover .categoria-titulo {
+            background: #f2b632;
+            color: #332b2e;
+        }
+    </style>
 </head>
 <body>
     <main class="pagina catalogo-inicio">
         <a class="volver" href="catalogo.html">← Volver al catálogo</a>
-        <h1 class="titulo-pagina"><span>Categorías</span><br>de animales</h1>
-        <p class="texto-intro">Elige la categoría que más te guste para conocer a los animales.</p>
-        <section class="categorias">
-            <a href="perros.html">Perros</a>
-            <a href="gatos.html">Gatos</a>
-            <a href="aves.html">Aves</a>
-            <a href="conejos.html">Conejos</a>
-            <a href="hamster.html">Hamster</a>
-            <a href="cerdos.html">Cerdos</a>
-            <a href="caballos.html">Caballos</a>
-            <a href="peces.html">Peces</a>
-        </section>
+        <h1 class="titulo-pagina centrado"><span>Categorías</span><br>de animales</h1>
+        <p class="texto-intro centrado">Elige la categoría que más te guste para conocer a los peluditos.</p>
+        
+        <div class="categorias-decoradas">
+            <!-- Tarjeta de Perros -->
+            <a href="perros.html" class="categoria-card">
+                <!-- Asegúrate de que el nombre coincida con tu archivo -->
+                <img src="imagenes/logo.png" alt="Perros">
+                <h2 class="categoria-titulo">Perros</h2>
+            </a>
+            
+            <!-- Tarjeta de Gatos -->
+            <a href="gatos.html" class="categoria-card">
+                <!-- Asegúrate de que el nombre coincida con tu archivo -->
+                <img src="imagenes/logo gatos.png" alt="Gatos">
+                <h2 class="categoria-titulo">Gatos</h2>
+            </a>
+        </div>
     </main>
 </body>
 </html>

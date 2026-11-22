@@ -9,34 +9,18 @@
 <body>
     <main class="pagina">
         <a class="volver" href="extravios.html">← Volver a extravíos</a>
-        <h1 class="titulo-pagina"><span>Pedir</span><br>ayuda</h1>
-        <p class="texto-intro">Si encontraste un animal o viste uno extraviado, por favor llena los datos de su placa para ayudarnos a localizar a su familia.</p>
+        <h1 class="titulo-pagina centrado"><span>Pedir</span><br>ayuda</h1>
+        <p class="texto-intro centrado">¡Gracias por ser un héroe! 🦸‍♂️ Si encontraste a un peludito, ayúdanos a que vuelva con su familia. Si el pequeñín trae una placa, por favor anota los números. ¡Ese pequeño detalle puede hacer magia y reunirlos de nuevo! 🪄</p>
 
-        <form class="mini-form" action="https://formsubmit.co/anitasusnanita@gmail.com" method="POST">
-            <label>¿Dónde viste al animal? (Zona o colonia):
-                <input type="text" name="zona" required>
-            </label>
-            
-            <label>¿Tenía placa?
-                <select name="tiene_placa" required>
-                    <option value="si">Sí, tenía placa</option>
-                    <option value="no">No tenía placa</option>
-                </select>
-            </label>
-
-            <label>Número de la placa (si la tiene):
-                <input type="text" name="numero_placa" placeholder="Ej. 12345">
-            </label>
-
-            <label>Datos extra o descripción:
-                <textarea name="descripcion" rows="3" placeholder="Color, raza, si está asustado..."></textarea>
-            </label>
-
-            <input type="hidden" name="_subject" value="Aviso de animal extraviado / Pedir ayuda">
-            <input type="hidden" name="_captcha" value="false">
-            
-            <button class="boton-enlace" type="submit">Enviar aviso</button>
-        </form>
+        <div class="contenedor-formulario">
+            <!-- FORMULARIO JOTFORM -->
+            <iframe
+                src="https://form.jotform.com/263247132371048"
+                title="Pedir ayuda"
+                style="width: 100%; min-height: 600px; border: none; border-radius: 15px; background: #fff;">
+                Cargando…
+            </iframe>
+        </div>
     </main>
 </body>
 </html>

@@ -5,56 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buzón de preguntas | Mascota a Bordo</title>
     <link rel="stylesheet" href="estilo.css">
+    <style>
+        .tarjetas { align-items: start; }
+        .tarjeta { display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .tarjeta .boton-enlace { margin: 10px 0; width: 80%; max-width: 200px; }
+        .caja-respuesta {
+            background-color: #f1f1f6; padding: 15px; border-radius: 15px;
+            margin: 10px 16px 15px 16px; width: calc(100% - 32px); 
+            box-sizing: border-box; display: flex; flex-direction: column;
+            align-items: center; gap: 15px; animation: aparecer 0.3s ease-in-out;
+        }
+        .caja-respuesta p { margin: 0; font-size: 0.95rem; color: #332b2e; line-height: 1.5; }
+        @keyframes aparecer { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        .btn-destacado { background-color: #557d35 !important; color: #fff !important; font-size: 1.1rem; padding: 15px 40px !important; margin-bottom: 40px !important; }
+        .btn-destacado:hover { background-color: #46662a !important; }
+    </style>
 </head>
 <body>
     <main class="pagina">
         <a class="volver" href="index.html">← Volver al inicio</a>
         <h1 class="titulo-pagina"><span>Buzón</span><br>de preguntas</h1>
-        <p class="texto-intro">Envíanos tus dudas sobre adopción, cuidados o el funcionamiento del sitio. Te responderemos lo antes posible.</p>
+        
+        <p class="texto-intro centrado" style="max-width: 800px; margin: 0 auto;">Envíanos tus dudas sobre adopción, cuidados o el funcionamiento del sitio. Te responderemos lo antes posible.</p>
+
+        <div class="acciones-inicio">
+            <a class="boton-enlace btn-destacado" href="buzon-enviar.html">✍️ Escribir mi pregunta</a>
+        </div>
 
         <section class="extra">
-            <h2 class="centrado">Preguntas frecuentes</h2>
+            <h2 class="centrado" style="margin-top: 0;">Preguntas frecuentes</h2>
             <div class="tarjetas">
                 <article class="tarjeta">
-                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=85" alt="Proceso de adopción" loading="lazy">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991114.png" alt="Proceso de adopción" loading="lazy" style="object-fit: contain; padding: 30px; background: #f7eddb;">
                     <h2>¿Cómo adopto?</h2>
-                    <p>Revisa el catálogo, elige un animal y llena el formulario de adopción.</p>
-                    
-                    <button class="boton-enlace" onclick="document.getElementById('resp1').hidden = !document.getElementById('resp1').hidden">Ver respuesta</button>
-                    
-                    <!-- Botón movido adentro de la respuesta -->
-                    <div id="resp1" hidden>
-                        <p style="padding: 0 16px;">Entra al catálogo, elige tu categoría favorita y después llena el formulario de adopción.</p>
+                    <button class="boton-enlace" id="btn1" onclick="toggleRespuesta('1')">Ver respuesta</button>
+                    <div id="resp1" class="caja-respuesta" style="display: none;">
+                        <p>Revisa el catálogo, elige un animal y llena el formulario de adopción.</p>
                         <a class="boton-enlace" href="categorias.html">Ver catálogo</a>
                     </div>
                 </article>
                 
                 <article class="tarjeta">
-                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=600&q=85" alt="Cuidados" loading="lazy">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2966/2966486.png" alt="Cuidados" loading="lazy" style="object-fit: contain; padding: 30px; background: #f7eddb;">
                     <h2>¿Qué necesita mi mascota?</h2>
-                    <p>Cada animal tiene cuidados distintos. Consulta su ficha y pregunta al equipo.</p>
-                    
-                    <button class="boton-enlace" onclick="document.getElementById('resp2').hidden = !document.getElementById('resp2').hidden">Ver respuesta</button>
-                    
-                    <!-- Botón movido adentro de la respuesta -->
-                    <div id="resp2" hidden>
-                        <p style="padding: 0 16px;">Revisa la ficha del animal y escríbenos si tienes dudas sobre alimentación o espacio.</p>
-                        <a class="boton-enlace" href="ficha.html">Ver ficha de ejemplo</a>
+                    <button class="boton-enlace" id="btn2" onclick="toggleRespuesta('2')">Ver respuesta</button>
+                    <div id="resp2" class="caja-respuesta" style="display: none;">
+                        <p>Cada animal tiene cuidados distintos. Revisa los datos del animal y escríbenos si tienes dudas sobre alimentación o espacio.</p>
                     </div>
                 </article>
                 
                 <article class="tarjeta">
-                    <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=600&q=85" alt="Donaciones" loading="lazy">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2489/2489756.png" alt="Donaciones" loading="lazy" style="object-fit: contain; padding: 30px; background: #f7eddb;">
                     <h2>¿Cómo apoyo?</h2>
-                    <p>Puedes donar o compartir el sitio para que más animales encuentren hogar.</p>
-                    <a class="boton-enlace" href="donaciones.html">Ir a donaciones</a>
+                    <button class="boton-enlace" id="btn3" onclick="toggleRespuesta('3')">Ver respuesta</button>
+                    <div id="resp3" class="caja-respuesta" style="display: none;">
+                        <p>Puedes donar o compartir el sitio para que más animales encuentren hogar.</p>
+                        <a class="boton-enlace" href="formulario-donacion.html">Ir a donaciones</a>
+                    </div>
                 </article>
             </div>
         </section>
-
-        <div class="acciones-inicio">
-            <a class="boton-enlace" href="buzon-enviar.html">Escribir mi pregunta</a>
-        </div>
     </main>
+
+    <script>
+        function toggleRespuesta(numero) {
+            var respuesta = document.getElementById('resp' + numero);
+            var boton = document.getElementById('btn' + numero);
+            if (respuesta.style.display === "none") {
+                respuesta.style.display = "flex";
+                boton.innerText = "Ocultar respuesta";
+            } else {
+                respuesta.style.display = "none";
+                boton.innerText = "Ver respuesta";
+            }
+        }
+    </script>
 </body>
 </html>
