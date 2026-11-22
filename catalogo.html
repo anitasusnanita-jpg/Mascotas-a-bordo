@@ -6,56 +6,202 @@
     <title>Encuentra a tu compañero | Mascota a Bordo</title>
     <link rel="stylesheet" href="estilo.css">
     <style>
-        .caja-como-funciona {
+        /* --- DISEÑO DEL BANNER PRINCIPAL --- */
+        .banner-catalogo {
             background: #fff8ec;
-            padding: 40px 30px;
             border-radius: 30px;
+            padding: 50px 30px;
+            text-align: center;
+            margin: 30px auto 60px auto;
+            max-width: 800px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            margin-top: 50px;
-            border: 2px dashed #ead0a5;
+            border: 3px dashed #f2b632; /* Borde punteado bonito */
+            position: relative;
+            overflow: hidden;
         }
-        .caja-como-funciona h2 {
+
+        .banner-catalogo h2 {
             color: #557d35;
-            font-size: 2rem;
+            font-size: 2.4rem;
             margin-top: 0;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
+            font-weight: 900;
+        }
+
+        .banner-catalogo p {
+            font-size: 1.15rem;
+            color: #51463d;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .btn-explorar {
+            display: inline-block;
+            background: #f2b632;
+            color: #332b2e !important;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 18px 45px;
+            border-radius: 50px; /* Botón bien redondito */
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(242, 182, 50, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-explorar:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(242, 182, 50, 0.6);
+        }
+
+        /* --- DISEÑO DE LOS PASOS --- */
+        .seccion-pasos {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .seccion-pasos h2 {
+            text-align: center;
+            color: #332b2e;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .contenedor-pasos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .paso-card {
+            background: #ffffff;
+            border-radius: 25px;
+            padding: 35px 25px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+            border-bottom: 6px solid #f2b632;
+        }
+
+        .paso-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Círculo de color detrás del ícono */
+        .icono-paso {
+            width: 100px;
+            height: 100px;
+            background: #f7eddb;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px auto;
+        }
+
+        .icono-paso img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .paso-card h3 {
+            color: #557d35;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .paso-card p {
+            color: #51463d;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* --- BOTÓN DE DUDAS --- */
+        .contenedor-dudas {
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .btn-dudas {
+            background: #557d35;
+            color: #fff !important;
+            padding: 15px 40px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 6px 15px rgba(85, 125, 53, 0.3);
+        }
+
+        .btn-dudas:hover {
+            background: #46662a;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 760px) {
+            .banner-catalogo h2 { font-size: 1.8rem; }
+            .paso-card { width: 100%; max-width: 320px; }
         }
     </style>
 </head>
 <body>
     <main class="pagina catalogo-inicio">
         <a class="volver" href="index.html">← Volver al inicio</a>
+        
         <h1 class="titulo-pagina centrado"><span>Encuentra</span><br>a tu compañero</h1>
-        <p class="texto-intro centrado">Elige una categoría para conocer a los animales disponibles en adopción.</p>
 
-        <div class="acciones-inicio">
-            <a class="boton-enlace" href="categorias.html" style="font-size: 1.1rem; padding: 15px 35px;">✨ Elige una mascota</a>
+        <!-- Banner de bienvenida con botón -->
+        <div class="banner-catalogo">
+            <h2>¡Tu nuevo mejor amigo te está esperando! 🐾</h2>
+            <p>Explora nuestro catálogo lleno de peluditos que buscan un hogar lleno de amor. El proceso es muy fácil y rápido.</p>
+            <a href="categorias.html" class="btn-explorar">✨ Ver mascotas disponibles ✨</a>
         </div>
 
-        <section class="caja-como-funciona">
-            <h2 class="centrado">¿Cómo funciona?</h2>
-            <div class="tarjetas" style="margin-top: 0;">
-                <article class="tarjeta">
-                    <img src="https://cdn-icons-png.flaticon.com/512/194/194279.png" alt="Elige" loading="lazy" style="object-fit: contain; padding: 40px; background: #f7eddb;">
-                    <h2>1. Elige</h2>
-                    <p>Entra a la categoría que te interese y revisa los animales disponibles.</p>
+        <!-- Sección de los 3 pasos -->
+        <section class="seccion-pasos">
+            <h2>¿Cómo adoptar?</h2>
+            <div class="contenedor-pasos">
+                
+                <article class="paso-card">
+                    <div class="icono-paso">
+                        <img src="https://cdn-icons-png.flaticon.com/512/194/194279.png" alt="Elige">
+                    </div>
+                    <h3>1. Elige</h3>
+                    <p>Entra a la categoría que más te guste y revisa a todos los animalitos disponibles.</p>
                 </article>
-                <article class="tarjeta">
-                    <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Conoce" loading="lazy" style="object-fit: contain; padding: 40px; background: #f7eddb;">
-                    <h2>2. Conoce</h2>
-                    <p>Cada animal tiene su edad, tamaño y carácter para que elijas mejor.</p>
+
+                <article class="paso-card">
+                    <div class="icono-paso">
+                        <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Conoce">
+                    </div>
+                    <h3>2. Conoce</h3>
+                    <p>Lee sus datos: su edad, tamaño y carácter, para que encuentres a tu compañero ideal.</p>
                 </article>
-                <article class="tarjeta">
-                    <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Adopta" loading="lazy" style="object-fit: contain; padding: 40px; background: #f7eddb;">
-                    <h2>3. Adopta</h2>
-                    <p>Llena el formulario de adopción y el equipo se pondrá en contacto contigo.</p>
+
+                <article class="paso-card">
+                    <div class="icono-paso">
+                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Adopta">
+                    </div>
+                    <h3>3. Adopta</h3>
+                    <p>Llena el formulario de adopción y prepárate para recibir mucho amor incondicional.</p>
                 </article>
+
             </div>
         </section>
 
-        <div class="acciones-inicio" style="margin-top: 40px;">
-            <a class="boton-enlace" href="buzon.html" style="background: #557d35; color: #fff !important;">¿Tienes dudas? Ve al buzón</a>
+        <!-- Botón de dudas abajo -->
+        <div class="contenedor-dudas">
+            <a href="buzon.html" class="btn-dudas">¿Tienes dudas? Ve al buzón 💬</a>
         </div>
+
     </main>
 </body>
 </html>
